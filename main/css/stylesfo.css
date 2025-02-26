@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    direction: rtl;
+}
+.content {
+    padding: 20px;
+    height: 1500px; /* للإظهار فقط لإمكانية التمرير */
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+.footer a {
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+}
+.footer a img {
+    display: block;
+    margin: 0 auto 5px;
+    width: 24px;
+    height: 24px;
+}

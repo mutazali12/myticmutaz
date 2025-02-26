@@ -1,0 +1,60 @@
+CREATE TABLE travelers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    passport_number VARCHAR(50) NOT NULL,
+    passport_issue DATE NOT NULL,
+    passport_expiry DATE NOT NULL,
+    departure_airport VARCHAR(100) NOT NULL,
+    arrival_airport VARCHAR(100) NOT NULL,
+    travel_date DATE NOT NULL,
+    class VARCHAR(20) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    cost DECIMAL(10, 2) NOT NULL DEFAULT 0.00
+);
+قاعدة الافراد
+
+
+قاعدة المجموعة
+
+CREATE TABLE trip_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    departure_airport VARCHAR(255),
+    arrival_airport VARCHAR(255),
+    travel_date DATE,
+    class VARCHAR(50),
+    phone VARCHAR(20)
+);
+
+CREATE TABLE passenger_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    trip_id INT,
+    passenger_name VARCHAR(255),
+    passport_number VARCHAR(255),
+    birth_date DATE,
+    passport_issue DATE,
+    passport_expiry DATE,
+    FOREIGN KEY (trip_id) REFERENCES trip_info(id)
+);
+
+
+قاعدة المطارات و الاسعار
+CREATE DATABASE flightDB;
+USE flightDB;
+
+CREATE TABLE flights (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    departure_airport VARCHAR(100) NOT NULL,
+    arrival_airport VARCHAR(100) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);
+
+
+2
+
+CREATE TABLE prices (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    departure_airport VARCHAR(255) NOT NULL,
+    arrival_airport VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);
+

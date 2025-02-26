@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حجز الرحلات</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/carousel.css"> <!-- ربط ملف CSS الجديد -->
+<link rel="stylesheet" href="css/s.css">
+</head>
+<body>
+
+<div class="main-content">    
+
+<h1>حجز الرحلات</h1>
+
+<div class="options">
+    <button id="soloBtn">مسافر بمفردي</button>
+    <button id="familyBtn">مجموعة مسافرين</button>
+</div>
+
+<form id="soloForm" action="process.php" method="post" style="display: none;">
+    <h2>بيانات المسافر</h2>
+    <!-- حقول مسافر بمفرده -->
+    <label>إسم المسافر مطابق للجواز:
+        <input type="text" name="name" required>
+    </label>
+    <label>رقم الجواز:
+        <input type="text" name="passport_number" required>
+    </label>
+    <label>تاريخ إصدار الجواز:
+        <input type="date" name="passport_issue" required>
+    </label>
+    <label>تاريخ انتهاء الجواز:
+        <input type="date" name="passport_expiry" required>
+    </label>
+    <label>مطار المغادرة:
+        <input type="text" id="departure_airport" name="departure_airport" required>
+    </label>
+    <label>مطار الوصول:
+        <input type="text" id="arrival_airport" name="arrival_airport" required>
+    </label>
+    <label>تاريخ الرحلة:
+        <input type="date" name="travel_date" required>
+    </label>
+    <label>الدرجة:
+        <select name="class" required>
+            <option value="economy">اقتصادية</option>
+            <option value="business">أعمال</option>
+        </select>
+    </label>
+    <label>رقم الهاتف (واتساب):
+        <input type="tel" name="phone" required>
+    </label>
+    <label>التكلفة:
+    <span id="cost"></span>
+    </label>
+    <button type="submit">التالي</button>
+</form>
+
+<form id="familyForm" action="process2.php" method="post" style="display: none;">
+    <h2>بيانات العائلة</h2>
+    <!-- بيانات عدد المسافرين والأطفال -->
+    <label>عدد المسافرين:
+        <input type="number" id="numTravelers" name="num_travelers" min="1" required>
+    </label>
+    <label>عدد الأطفال أقل من 11 سنة:
+        <input type="number" id="numChildren" name="num_children" min="0" required>
+    </label>
+    <div id="travelersInfo"></div>
+    <!-- معلومات ثابتة -->
+    <label>مطار المغادرة:
+        <input type="text" name="departure_airport" required>
+    </label>
+    <label>مطار الوصول:
+        <input type="text" name="arrival_airport" required>
+    </label>
+    <label>تاريخ الرحلة:
+        <input type="date" name="travel_date" required>
+    </label>
+    <label>الدرجة:
+        <select name="class" required>
+            <option value="economy">اقتصادية</option>
+            <option value="business">أعمال</option>
+        </select>
+    </label>
+    <label>رقم الهاتف (واتساب):
+        <input type="tel" name="phone" required>
+    </label>
+    <button type="submit">التالي</button>
+</form>
+
+<!-- إضافة معرض الشعارات هنا -->
+<div class="logo-carousel">
+    <div class="carousel-track">
+        <img src="images/logo1.png" alt="شعار شركة الطيران 1">
+        <img src="images/logo2.png" alt="شعار شركة الطيران 2">
+        <img src="images/logo3.png" alt="شعار شركة الطيران 3">
+        <img src="images/logo4.png" alt="شعار شركة الطيران 4">
+        <img src="images/logo5.png" alt="شعار شركة الطيران 5">
+        <img src="images/logo6.png" alt="شعار شركة الطيران 6">
+        <!-- تكرار الصور لتحقيق حركة مستمرة -->
+        <img src="images/logo1.png" alt="شعار شركة الطيران 1">
+        <img src="images/logo2.png" alt="شعار شركة الطيران 2">
+        <img src="images/logo3.png" alt="شعار شركة الطيران 3">
+        <img src="images/logo4.png" alt="شعار شركة الطيران 4">
+        <img src="images/logo5.png" alt="شعار شركة الطيران 5">
+        <img src="images/logo6.png" alt="شعار شركة الطيران 6">
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+
+</div>
+
+</body>
+<footer class="fo4-footer"> 
+
+</footer>
+    <div class="fo4-footer-bottom">
+        <div class="fo4-footer-rights">
+            
+
+        </div>
+         <!-- إضافة أيقونات مواقع التواصل الاجتماعي هنا -->
+    <div class="social-media">
+        <a href="https://www.facebook.com/profile.php?id=61573601523223" target="_blank" class="social-icon">
+            <img src="images/1.png" alt="Facebook">
+        </a>
+        <a href="https://twitter.com/mutazmudather" target="_blank" class="social-icon">
+            <img src="images/2.png" alt="Twitter">
+        </a>
+        <a href="https://www.instagram.com/myticsudan?igsh=YzljYT1ODg3Zg" target="_blank" class="social-icon">
+            <img src="images/3.png" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/in/YourProfile" target="_blank" class="social-icon">
+            <img src="images/4.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.youtube.com/channel/UCz3in1mH9lJX6nJDYYo-Olg" target="_blank" class="social-icon">
+            <img src="images/5.png" alt="YouTube">
+        </a>
+        <a href="https://wa.me/249912500618" target="_blank" class="social-icon">
+            <img src="images/whatsapp.png" alt="WhatsApp">
+        </a>
+    </div>
+    </div>
+
+</footer>
+</html>
+
+<script>
+    // كود JavaScript لحساب التكلفة
+    document.getElementById('departure_airport').addEventListener('change', getPrice);
+    document.getElementById('arrival_airport').addEventListener('change', getPrice);
+
+    function getPrice() {
+        var departureAirport = document.getElementById('departure_airport').value;
+        var arrivalAirport = document.getElementById('arrival_airport').value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                document.getElementById('cost').textContent = xhr.responseText;
+            }
+        };
+        xhr.open('GET', 'get_price.php?departure=' + departureAirport + '&arrival=' + arrivalAirport, true);
+        xhr.send();
+    }
+</script>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أيقونة استعلام مباشر</title>
+    <link rel="stylesheet" href="css/ws.css">
+</head>
+<body>
+
+    <a href="https://wa.me/249912500618" class="whatsapp-icon">
+        <img src="images/6.png" alt="استعلام مباشر">
+    </a>
+
+</body>
+</html>

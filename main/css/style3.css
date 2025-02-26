@@ -1,0 +1,120 @@
+/* الخط الأساسي */
+body {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/background/m.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* تنسيق الجداول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* استعلامات الوسائط للتصميم المتجاوب */
+/* للأجهزة اللوحية والشاشات الأصغر */
+@media (max-width: 992px) {
+    .main-content {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .options button {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}
+
+/* للهواتف المحمولة */
+@media (max-width: 576px) {
+    .main-content {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .options button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    label input,
+    label select {
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

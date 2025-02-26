@@ -1,0 +1,100 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    direction: rtl; /* تغيير اتجاه النص إلى اليمين إلى اليسار */
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.section {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    text-align: right; /* محاذاة النص إلى اليمين */
+}
+
+.section h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.section p {
+    margin: 5px 0;
+}
+
+.upload-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+upload-form input[type="file"],
+upload-form input[type="submit"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+upload-form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+upload-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.success {
+    color: green;
+    background-color: #d4edda;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center; /* محاذاة النص إلى المنتصف */
+}
+
+.error {
+    color: red;
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center; /* محاذاة النص إلى المنتصف */
+}
+
+.complete-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+complete-btn:hover {
+    background-color: #218838;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+}

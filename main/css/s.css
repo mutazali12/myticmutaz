@@ -1,0 +1,10 @@
+.social-icon i {
+  font-size: 30px;
+  color: #333;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon i:hover {
+  color: #0077b5; /* يمكنك تغيير اللون حسب الموقع */
+  transform: scale(1.2);
+}

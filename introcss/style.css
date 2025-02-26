@@ -1,0 +1,87 @@
+body {
+  background-color: white; /* خلفية بيضاء */
+  margin: 0; /* إزالة الهوامش الافتراضية */
+  display: flex; /* استخدام flexbox للتوسيط */
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  align-items: center; /* توسيط العناصر أفقيًا */
+  justify-content: center; /* توسيط العناصر رأسيًا */
+  min-height: 100vh; /* جعل الصفحة تشغل كامل ارتفاع الشاشة */
+  font-family: sans-serif; /* اختيار خط افتراضي */
+  overflow: hidden; /* منع ظهور شريط التمرير أثناء تأثير الموجات */
+}
+
+.logo {
+  display: flex; /* استخدام flexbox لترتيب الأحرف */
+  font-size: 1em; /* حجم الخط */
+  font-weight: bold; /* خط عريض */
+  position: relative; /* لتمكين وضع اللمعة */
+  perspective: 1000px; /* لإنشاء تأثير ثلاثي الأبعاد */
+  transform-style: preserve-3d; /* للحفاظ على تأثير ثلاثي الأبعاد على الأحرف */
+}
+
+.letter {
+  transition: transform 0.3s ease; /* تأثير عند تحريك الماوس */
+  transform-origin: center; /* تحديد مركز التحويل */
+  transform: rotateY(0deg); /* البداية بدون دوران ثلاثي الأبعاد */
+ transition: transform 0.3s ease;
+  transform-origin: center;
+  transform: rotateY(0deg);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* إضافة الظل ثلاثي الأبعاد */
+}
+
+.letter:hover {
+  transform: scale(1.2) rotateY(10deg); /* تأثير عند تحريك الماوس مع دوران ثلاثي الأبعاد */
+transform: scale(1.2) rotateY(10deg);
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* زيادة الظل عند التhover */
+}
+
+.shine {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), transparent); /* تدرج لوني لللمعة */
+  animation: shine 5s linear infinite; /* تحريك اللمعة */
+  transform-origin: center;
+  z-index: 1; /* لجعل اللمعة فوق النص */
+  pointer-events: none; /* لمنع اللمعة من التأثير على تفاعلات الماوس */
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1), transparent); /* تأثير الموجات */
+  border-radius: 50%;
+  animation: ripple 2s linear infinite; /* تحريك الموجات */
+  opacity: 0; /* البداية شفافة */
+}
+
+footer {
+  margin-top: 20px; /* هامش علوي */
+  color: #DC143C; /* لون MYTEC في الفوتر (أحمر قرمزي) */
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(-45deg) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(315deg) translate(-50%, -50%);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(5);
+    opacity: 0;
+  }
+}
